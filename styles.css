@@ -92,6 +92,7 @@ header {
 /* Contenu central */
 .content {
     flex: 1;
+    margin-left: -80px;
     padding: 20px;
     min-height: calc(100vh - 60px); /* Pour prendre en compte la hauteur du header */
     text-align: center;
@@ -107,6 +108,7 @@ header {
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
+
 .button {
     display: inline-block;
     padding: 10px 20px;
