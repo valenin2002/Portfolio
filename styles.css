@@ -1,0 +1,122 @@
+/* Reset de base */
+body, h1, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('img/fond.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left .logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.header-right ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.header-right li {
+    margin-left: 20px;
+}
+
+.header-right a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.header-right a:hover {
+    color: #007BFF;
+}
+
+/* Contenu principal */
+.main-content {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 60px;
+    margin-top: 80px;
+    height: fit-content;
+    background-color: rgba(255, 255, 255);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar li {
+    margin-bottom: 15px;
+}
+
+.sidebar a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.sidebar a img:hover {
+    transform: scale(1.1);
+}
+
+/* Contenu central */
+.content {
+    flex: 1;
+    padding: 20px;
+    min-height: calc(100vh - 60px); /* Pour prendre en compte la hauteur du header */
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f4b400;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #eaa000;
+}
