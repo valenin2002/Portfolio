@@ -162,7 +162,7 @@ header {
 }
 
 .project-card {
-    position: relative; /* Nécessaire pour les pseudo-éléments */
+    position: relative;
     display: flex;
     background-color: #efefef;
     margin: 15px auto;
@@ -171,28 +171,80 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 85%;
-    position: relative; /* Nécessaire si d'autres éléments interagissent */
 }
 
 .project-text {
     margin-left: 50px;
+    margin-right: 20px;
     padding: 20px;
     flex: 3;
-    text-align: left; /* Aligne le texte à gauche */
+    text-align: left;
 }
 
 .project-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     flex: 2;
     margin: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-right: 50px;
 }
 
-.project-image img {
+.carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.carousel img {
     max-width: 100%;
     height: auto;
+    display: none;
+    border-radius: 10px;
 }
+
+.carousel img.active {
+    display: block;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100;
+}
+
+.prev {
+    left: -40px; /* Déplace la flèche gauche à l'extérieur */
+}
+
+.next {
+    right: -40px; /* Déplace la flèche droite à l'extérieur */
+}
+
 
 #about .about-content {
     width: 85%; /* Largeur du texte */
