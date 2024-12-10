@@ -7,8 +7,6 @@ body, h1, ul, li, a {
 
 body {
     font-family: Arial, sans-serif;
-    background: url('img/fond.png') no-repeat center center fixed;
-    background-size: cover;
 }
 
 /* Header */
@@ -17,13 +15,14 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: white;
+    background-color: #333F50;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-left {
     display: flex;
     align-items: center;
+    color: #fff;
 }
 
 .header-left .logo {
@@ -43,13 +42,13 @@ header {
 
 .header-right a {
     text-decoration: none;
-    color: #333;
+    color: #fff;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 .header-right a:hover {
-    color: #007BFF;
+    color: #c6c6c6;
 }
 
 /* Contenu principal */
@@ -76,13 +75,16 @@ header {
 }
 
 .sidebar li {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .sidebar a img {
     width: 30px;
     height: 30px;
     transition: transform 0.3s;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .sidebar a img:hover {
@@ -93,7 +95,6 @@ header {
 .content {
     flex: 1;
     margin-left: -80px;
-    padding: 20px;
     min-height: calc(100vh - 60px); /* Pour prendre en compte la hauteur du header */
     text-align: center;
 }
@@ -112,7 +113,7 @@ header {
 .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #f4b400;
+    background-color: #333F50;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -120,8 +121,79 @@ header {
 }
 
 .button:hover {
-    background-color: #eaa000;
+    background-color: #c6c6c6;
 }
+
+#home, #about{
+    background: url('img/fond.png') no-repeat center center;
+    background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 300px;
+}
+
+#projects {
+    position: relative; /* Nécessaire pour positionner la ligne */
+}
+
+#projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    margin-top: 80px;
+    margin-bottom: 15px;
+    left: 9.95%;
+    width: 2px; /* Épaisseur de la ligne */
+    height: calc(100% - 95px);
+    background-color: #333F50; /* Couleur de la ligne */
+    z-index: 10;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    left: 3%; /* Aligné avec la ligne verticale */
+    width: 15px; /* Diamètre du point */
+    height: 15px; /* Diamètre du point */
+    background-color: #333F50; /* Même couleur que la ligne */
+    border-radius: 50%; /* Pour un point circulaire */
+    transform: translateX(-50%); /* Centrer le point sur la ligne */
+    top: 45px; /* Position au milieu de chaque project-card */
+    z-index: 11; /* Pour le placer au-dessus de la ligne */
+}
+
+.project-card {
+    position: relative; /* Nécessaire pour les pseudo-éléments */
+    display: flex;
+    background-color: #dbdbdb;
+    margin: 15px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 85%;
+    position: relative; /* Nécessaire si d'autres éléments interagissent */
+}
+
+.project-text {
+    margin-left: 50px;
+    padding: 20px;
+    flex: 3;
+    text-align: left; /* Aligne le texte à gauche */
+}
+
+.project-image {
+    flex: 2;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+
 
 .contacts {
     margin: 20px 0;
