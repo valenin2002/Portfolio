@@ -60,7 +60,7 @@
 
                 <div class="project-card">
                     <div class="project-text">
-                        <h3>Projet de fin d'étude</h3>
+                        <h3>Projet de fin d'étude - PLP (Plateau Projet)</h3>
                         <p>INSA Hauts-de-France<br>
                         Septembre 2023 - Février 2024</p>
                         Etude de la capacité d’absorption de différentes structures lattices hybrides avec des gradients de réseaux
@@ -85,9 +85,9 @@
                         <h3>Ingénieur R&D</h3>
                         <p>CEREMA, Bron, France<br>
                         September 2022 - Janvier 2023</p>
-                        Conception/ prédimensionnement
-                        Rédaction d'un cahier des charges fonctionnel
-                        Illustrations, modélisations 3D et simulation RDM sous SolidWorks
+                        Conception/ prédimensionnement <br>
+                        Rédaction d'un cahier des charges fonctionnel <br>
+                        Illustrations, modélisations 3D et simulation RDM sous SolidWorks <br>
                         Rédaction d'une étude de faisabilité
                     </div>
                     <div class="project-image"></div>
@@ -97,12 +97,14 @@
 
 
             <section id="about">
-                <h2>A propos de moi</h2>
-                <p>I am an engineer specializing in mechanical design with a passion for developing innovative solutions and 3D modeling.<br></p>
-                <p>Graduated in mechanical and energy engineering from INSA Hauts-de-France, I acquired solid experience in CAD and project management through several internships, including missions in the product design and documentation sector. <br></p>
-                <p>I am proficient in tools such as SolidWorks and CATIA for design and prototyping</p>
-                <p>I recently led a project designing a complex part for a manufacturing company, optimizing durability and production while reducing costs. <br></p>
-                <p>My passions are<br></p>
+                <div class="about-content">
+                    <h2>A propos de moi</h2>
+                    <p>I am an engineer specializing in mechanical design with a passion for developing innovative solutions and 3D modeling.<br></p>
+                    <p>Graduated in mechanical and energy engineering from INSA Hauts-de-France, I acquired solid experience in CAD and project management through several internships, including missions in the product design and documentation sector. <br></p>
+                    <p>I am proficient in tools such as SolidWorks and CATIA for design and prototyping</p>
+                    <p>I recently led a project designing a complex part for a manufacturing company, optimizing durability and production while reducing costs. <br></p>
+                    <p>My passions are<br></p>
+                </div>
             </section>
 
             <section id="contacts">
@@ -117,4 +119,28 @@
         </div>
     </div>
 </body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Sélectionner tous les boutons avec la classe "button"
+        const buttons = document.querySelectorAll(".button");
+        
+        buttons.forEach(button => {
+            button.addEventListener("click", function(event) {
+                event.preventDefault(); // Empêcher le comportement par défaut
+                const targetId = button.getAttribute("href").substring(1); // Récupérer l'ID de la section cible
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: "smooth", // Effet de défilement fluide
+                        block: "start" // Aligner la section en haut de la vue
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+
 </html>

@@ -164,8 +164,9 @@ header {
 .project-card {
     position: relative; /* Nécessaire pour les pseudo-éléments */
     display: flex;
-    background-color: #dbdbdb;
+    background-color: #efefef;
     margin: 15px auto;
+    margin-bottom: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -193,7 +194,10 @@ header {
     height: auto;
 }
 
-
+#about .about-content {
+    width: 85%; /* Largeur du texte */
+    margin: 0 auto; /* Centre horizontalement */
+}
 
 .contacts {
     margin: 20px 0;
