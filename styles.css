@@ -124,14 +124,22 @@ header {
     background-color: #c6c6c6;
 }
 
-#home, #about{
+#home{
     background: url('img/fond.png') no-repeat center center;
     background-size: cover;
-    padding-top: 50px;
-    padding-bottom: 270px;
+    padding-top: 20px;
+    padding-bottom: 70vh;
+}
+
+#about{
+    background: url('img/fond.png') no-repeat center center;
+    background-size: cover;
+    padding-top: 10px;
+    padding-bottom: 70vh;
 }
 
 #projects {
+    padding-top: 10px;
     position: relative; /* Nécessaire pour positionner la ligne */
 }
 
@@ -139,11 +147,11 @@ header {
     content: '';
     position: absolute;
     top: 0;
-    margin-top: 80px;
+    margin-top: 120px;
     margin-bottom: 15px;
     left: 9.95%;
     width: 2px; /* Épaisseur de la ligne */
-    height: calc(100% - 95px);
+    height: calc(100% - 135px);
     background-color: #333F50; /* Couleur de la ligne */
     z-index: 10;
 }
@@ -249,6 +257,11 @@ button {
 #about .about-content {
     width: 85%; /* Largeur du texte */
     margin: 0 auto; /* Centre horizontalement */
+}
+
+#contacts{
+    padding-top: 10px;
+    padding-bottom: 70vh;
 }
 
 .contacts {
