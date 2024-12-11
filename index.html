@@ -235,18 +235,15 @@
         document.getElementById('password').focus();
     };
 
-    // Vérifier le mot de passe
-    function checkPassword() {
-        const password = document.getElementById('password').value;
-        const correctPassword = 'valentin-bacout';  // Remplacez par votre mot de passe
+    function generateDynamicPassword() {
+        const today = new Date();
+        const dd = String(today.getDate()).padStart(2, '0');
+        const mm = String(today.getMonth() + 1).padStart(2, '0'); // Les mois commencent à 0
+        const yyyy = today.getFullYear();
 
-        if (password === correctPassword) {
-            document.getElementById('myModal').style.display = "none"; // Fermer la modale
-            document.getElementById('content').style.display = 'block'; // Afficher le contenu protégé
-        } else {
-            alert('Mot de passe incorrect');
-        }
+        return `valentin-bacout-${dd}-${mm}-${yyyy}`;
     }
+
 
 
     // Ajouter l'écouteur d'événement pour la touche Entrée
@@ -269,48 +266,48 @@
     }
 
     function togglePassword() {
-    const passwordField = document.getElementById("password");
-    const toggleButton = document.getElementById("togglePasswordBtn");
-    const icon = document.getElementById("togglePasswordIcon");
+        const passwordField = document.getElementById("password");
+        const toggleButton = document.getElementById("togglePasswordBtn");
+        const icon = document.getElementById("togglePasswordIcon");
 
-    // Vérifie si le mot de passe est actuellement masqué ou affiché
-    if (passwordField.type === "password") {
-        passwordField.type = "text"; // Affiche le mot de passe
-        icon.src = "img/eye-slash-icon.png"; // Remplace l'icône par l'icône pour masquer
-    } else {
-        passwordField.type = "password"; // Masque le mot de passe
-        icon.src = "img/eye-icon.png"; // Remplace l'icône par l'icône pour afficher
+        // Vérifie si le mot de passe est actuellement masqué ou affiché
+        if (passwordField.type === "password") {
+            passwordField.type = "text"; // Affiche le mot de passe
+            icon.src = "img/eye-slash-icon.png"; // Remplace l'icône par l'icône pour masquer
+        } else {
+            passwordField.type = "password"; // Masque le mot de passe
+            icon.src = "img/eye-icon.png"; // Remplace l'icône par l'icône pour afficher
+        }
     }
-}
 
-// Afficher la modale lorsque la page est chargée
-window.onload = function() {
-    document.getElementById('myModal').style.display = "block";
-    // Bloquer le défilement de la page
-    document.body.classList.add('no-scroll');
-};
+    // Afficher la modale lorsque la page est chargée
+    window.onload = function() {
+        document.getElementById('myModal').style.display = "block";
+        // Bloquer le défilement de la page
+        document.body.classList.add('no-scroll');
+    };
 
-// Fermer la modale et réactiver le défilement
-function checkPassword() {
-    const password = document.getElementById('password').value;
-    const correctPassword = 'valentin-bacout';  // Remplacez par votre mot de passe
+    // Fermer la modale et réactiver le défilement
+    function checkPassword() {
+        const password = document.getElementById('password').value;
+        const correctPassword = generateDynamicPassword();  // Remplacez par votre mot de passe
 
-    if (password === correctPassword) {
-        document.getElementById('myModal').style.display = "none"; // Fermer la modale
-        document.body.classList.remove('no-scroll'); // Réactiver le défilement
-        document.getElementById('content').style.display = 'block'; // Afficher le contenu protégé
-    } else {
-        alert('Mot de passe incorrect');
+        if (password === correctPassword) {
+            document.getElementById('myModal').style.display = "none"; // Fermer la modale
+            document.body.classList.remove('no-scroll'); // Réactiver le défilement
+            document.getElementById('content').style.display = 'block'; // Afficher le contenu protégé
+        } else {
+            alert('Mot de passe incorrect');
+        }
     }
-}
 
-// Fermer la modale et réactiver le défilement si l'utilisateur clique sur la touche "Échap"
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        document.getElementById('myModal').style.display = "none"; // Fermer la modale
-        document.body.classList.remove('no-scroll'); // Réactiver le défilement
-    }
-});
+    // Fermer la modale et réactiver le défilement si l'utilisateur clique sur la touche "Échap"
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            document.getElementById('myModal').style.display = "none"; // Fermer la modale
+            document.body.classList.remove('no-scroll'); // Réactiver le défilement
+        }
+    });
 
 
 </script>
