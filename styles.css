@@ -191,7 +191,6 @@ header {
 
 .project-image {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -397,3 +396,37 @@ button:hover {
 .no-scroll {
     overflow: hidden;
 }
+
+
+
+
+
+/* Cacher les liens pour les petits écrans */
+@media (max-width: 600px) {
+    .header-right {
+        display: none;
+    }
+
+    .sidebar{
+        display: none;
+    }
+
+    .content {
+        margin-left: 0px;
+    }
+
+    .project-card{
+        flex-direction: column;
+    }
+
+    .project-text {
+        flex: 1;
+    }
+    
+    .project-image {
+        flex: 1;
+        margin-left: 85px;
+        width: 60%;
+    }
+}
+
