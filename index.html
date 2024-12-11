@@ -18,7 +18,7 @@
             <ul>
                 <li><a href="#home">Accueil</a></li>
                 <li><a href="#projects">Projets</a></li>
-                <li><a href="#about">A propos</a></li>
+                <li><a href="#travaux">Travaux</a></li>
                 <li><a href="#contacts">Contacts</a></li>
             </ul>
         </nav>
@@ -40,7 +40,7 @@
                 <h2>Bonjour, je m'appelle Valentin Bacout</h2>
                 <p>Je suis diplômé ingénieur en mécanique énergétique, spécialisé en conception</p>
                 <a href="#projects" class="button">Projets</a>
-                <a href="#about" class="button">A propos</a>
+                <a href="#travaux" class="button">Travaux personnels et associatifs</a>
                 <a href="#contacts" class="button">Contacts</a>
             </section>
 
@@ -107,7 +107,8 @@
                         Conception/ prédimensionnement <br>
                         Rédaction d'un cahier des charges fonctionnel <br>
                         Illustrations, modélisations 3D et simulation RDM sous SolidWorks <br>
-                        Rédaction d'une étude de faisabilité
+                        Rédaction d'une étude de faisabilité <br><br>
+                        En raison de la nature confidentielle du projet, les images illustrant cette présentation sont des représentations génériques et ne reflètent pas les visuels réels du projet.
                     </div>
                     <div class="project-image">
                         <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
@@ -123,14 +124,64 @@
             </section>
 
 
-            <section id="about">
-                <h2>A propos de moi</h2>
-                <div class="about-content">
-                    <p>Je suis ingénieur spécialisé en conception mécanique avec une passion pour le développement de solutions innovantes et la modélisation 3D.<br></p>
-                    <p>Diplômé ingénieur en mécanique énergétique à l'INSA Hauts-de-France, j'ai acquis une solide expérience en CAO, conception et prototypage au travers de plusieurs stages, incluant des missions dans le domaine de la conception de produits et de la documentation.<br></p>
-                    <p>Je maîtrise des outils tels que SolidWorks et CATIA V5 pour la conception et le prototypage.</p>
-                    <p>Mes passions sont<br></p>                    
+            <section id="travaux">
+                <h2>Travaux personnels et associatifs</h2>
+                <div class="travaux-content">
+                    <p>Je suis ingénieur spécialisé en conception mécanique avec une passion pour le développement de solutions innovantes et la modélisation 3D.<br></p>                   
                 </div>
+
+                <div class="travaux-card">
+                    <div class="travaux-image">
+                        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                        <div class="carousel">
+                            <video src="img/Aftermovie final toss 2023.mp4" controls poster="img/miniature1.png"></video>
+                            <video src="img/SKINSA_2024.mp4" controls poster="img/miniature2.png"></video>
+                        </div>
+                        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                    </div>
+                    <div class="travaux-text">
+                        <h3>Bureau des Etudiants</h3>
+                        <p>INSA Hauts-de-France</p>
+                        Responsable du pôle communication<br><br>
+                        Gestion de la communication (digitale et physique) <br>
+                        Réalisation de films rétrospectifs (Production, Tournage, Montage)
+                    </div>
+                </div>
+
+                <div class="travaux-card">
+                    <div class="travaux-image">
+                        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                        <div class="carousel">
+                            <img src="img/code.png" alt="Code">
+                        </div>                      
+                        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                    </div>
+                    <div class="travaux-text">
+                        <h3>Développement de sites web en front-end (HTML, CSS et JavaScript)</h3>
+                        <p>Portfolio Personnel</p>
+                        <a href="https://valentinbacout.github.io/portfolio/" target="_blank">Portfolio Personnel</a><br>
+                        <p>Portfolio Lego</p>
+                        <a href="https://bricks44creations.github.io/Site" target="_blank">Portfolio Lego</a>
+                    </div>
+                </div>
+
+                <div class="travaux-card">
+                    <div class="travaux-image">
+                        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                        <div class="carousel">
+                            <video src="img/INS'Avengers_ l'ère de Khion.mp4" controls poster="img/insavengers minia.png"></video>
+                        </div>
+                        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                    </div>
+                    <div class="travaux-text">
+                        <h3>Liste au Bureau des Etudiants</h3>
+                        <p>INSA Hauts-de-France</p>
+                        Responsable du pôle communication<br><br>
+                        Gestion de la communication (digitale et physique) <br>
+                        Prise en charge (avec une équipe de 4 personnes) de la production complète d'un film de campagne <br>
+                    </div>
+                </div>
+
             </section>
 
             <section id="contacts">
@@ -187,44 +238,95 @@
 </script>
 
 <script>
-    // Fonction pour afficher une image dans le carrousel spécifié
-    function showSlide(index, carousel) {
-        const images = carousel.querySelectorAll('img');
-        if (index >= images.length) {
-            index = 0;
-        }
-        if (index < 0) {
-            index = images.length - 1;
-        }
+    document.querySelectorAll('.project-image').forEach(project => {
+        const carousel = project.querySelector('.carousel');
+        const slides = carousel.querySelectorAll('img, video');
+        let currentIndex = 0;
 
-        images.forEach((img, i) => {
-            img.classList.remove('active');
-            if (i === index) {
-                img.classList.add('active');
+        // Fonction pour afficher une diapositive (image ou vidéo)
+        function showSlide(index) {
+            if (index >= slides.length) {
+                index = 0;
             }
+            if (index < 0) {
+                index = slides.length - 1;
+            }
+
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active'); // Retire la classe active
+                if (slide.tagName === 'VIDEO') {
+                    slide.pause(); // Met en pause toutes les vidéos
+                }
+            });
+
+            slides[index].classList.add('active'); // Ajoute la classe active
+            if (slides[index].tagName === 'VIDEO') {
+                slides[index].play(); // Joue la vidéo active
+            }
+
+            currentIndex = index; // Met à jour l'index courant
+        }
+
+        // Gestion des boutons précédent et suivant
+        project.querySelector('.prev').addEventListener('click', () => {
+            showSlide(currentIndex - 1);
         });
-    }
 
-    // Fonction pour déplacer le carrousel (précédent ou suivant)
-    function moveSlide(step, carousel) {
-        const images = carousel.querySelectorAll('img');
-        let currentSlide = Array.from(images).findIndex(img => img.classList.contains('active'));
-        currentSlide += step;
-        showSlide(currentSlide, carousel);
-    }
+        project.querySelector('.next').addEventListener('click', () => {
+            showSlide(currentIndex + 1);
+        });
 
-    // Initialisation des carrousels pour afficher la première image
-    document.querySelectorAll('.project-image').forEach((projectImage) => {
-        const carousel = projectImage.querySelector('.carousel');
-        showSlide(0, carousel); // Afficher la première image au démarrage
-
-        // Ajouter des gestionnaires d'événements pour les flèches de navigation
-        const prevButton = projectImage.querySelector('.prev');
-        const nextButton = projectImage.querySelector('.next');
-
-        prevButton.addEventListener('click', () => moveSlide(-1, carousel));
-        nextButton.addEventListener('click', () => moveSlide(1, carousel));
+        // Initialisation du carrousel
+        showSlide(currentIndex);
     });
+
+
+</script>
+
+<script>
+    document.querySelectorAll('.travaux-image').forEach(project => {
+        const carousel = project.querySelector('.carousel');
+        const slides = carousel.querySelectorAll('img, video');
+        let currentIndex = 0;
+
+        // Fonction pour afficher une diapositive (image ou vidéo)
+        function showSlide(index) {
+            if (index >= slides.length) {
+                index = 0;
+            }
+            if (index < 0) {
+                index = slides.length - 1;
+            }
+
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active'); // Retire la classe active
+                if (slide.tagName === 'VIDEO') {
+                    slide.pause(); // Met en pause toutes les vidéos
+                }
+            });
+
+            slides[index].classList.add('active'); // Ajoute la classe active
+            if (slides[index].tagName === 'VIDEO') {
+            //   slides[index].play(); // Joue la vidéo active
+            }
+
+            currentIndex = index; // Met à jour l'index courant
+        }
+
+        // Gestion des boutons précédent et suivant
+        project.querySelector('.prev').addEventListener('click', () => {
+            showSlide(currentIndex - 1);
+        });
+
+        project.querySelector('.next').addEventListener('click', () => {
+            showSlide(currentIndex + 1);
+        });
+
+        // Initialisation du carrousel
+        showSlide(currentIndex);
+    });
+
+
 </script>
 
 <script>
@@ -310,6 +412,32 @@
     });
 
 
+</script>
+
+<script>
+        // Sélectionner toutes les vidéos dans le carrousel
+    const videos = document.querySelectorAll('video');
+
+    // Fonction pour stopper la lecture de toutes les vidéos
+    function stopAllVideos() {
+        videos.forEach(video => {
+            video.pause();
+            video.currentTime = 0; // Remettre la vidéo au début
+        });
+    }
+
+    // Ajouter un écouteur d'événements sur chaque vidéo
+    videos.forEach(video => {
+        video.addEventListener('click', function() {
+            // Si la vidéo est en pause, la lire, sinon la stopper
+            if (video.paused) {
+                stopAllVideos(); // Arrêter les autres vidéos
+                video.play(); // Lire la vidéo
+            } else {
+                video.pause(); // Mettre en pause si la vidéo est déjà en train de jouer
+            }
+        });
+    });
 </script>
 
 </html>
