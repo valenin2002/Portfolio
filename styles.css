@@ -1,0 +1,399 @@
+/* Reset de base */
+body, h1, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333F50;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.header-left .logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.header-right ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.header-right li {
+    margin-left: 20px;
+}
+
+.header-right a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.header-right a:hover {
+    color: #c6c6c6;
+}
+
+/* Contenu principal */
+.main-content {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 60px;
+    margin-top: 80px;
+    height: fit-content;
+    background-color: rgba(255, 255, 255);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.sidebar a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.sidebar a img:hover {
+    transform: scale(1.1);
+}
+
+/* Contenu central */
+.content {
+    flex: 1;
+    margin-left: -80px;
+    min-height: calc(100vh - 60px); /* Pour prendre en compte la hauteur du header */
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333F50;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #c6c6c6;
+}
+
+#home{
+    background: url('img/fond.png') no-repeat center center;
+    background-size: cover;
+    padding-top: 20px;
+    padding-bottom: 70vh;
+}
+
+#about{
+    background: url('img/fond.png') no-repeat center center;
+    background-size: cover;
+    padding-top: 10px;
+    padding-bottom: 70vh;
+}
+
+#projects {
+    padding-top: 10px;
+    position: relative; /* Nécessaire pour positionner la ligne */
+}
+
+#projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    margin-top: 120px;
+    margin-bottom: 15px;
+    left: 9.95%;
+    width: 2px; /* Épaisseur de la ligne */
+    height: calc(100% - 135px);
+    background-color: #333F50; /* Couleur de la ligne */
+    z-index: 10;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    left: 3%; /* Aligné avec la ligne verticale */
+    width: 15px; /* Diamètre du point */
+    height: 15px; /* Diamètre du point */
+    background-color: #333F50; /* Même couleur que la ligne */
+    border-radius: 50%; /* Pour un point circulaire */
+    transform: translateX(-50%); /* Centrer le point sur la ligne */
+    top: 45px; /* Position au milieu de chaque project-card */
+    z-index: 11; /* Pour le placer au-dessus de la ligne */
+}
+
+.project-card {
+    position: relative;
+    display: flex;
+    background-color: #efefef;
+    margin: 15px auto;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 85%;
+}
+
+.project-text {
+    margin-left: 50px;
+    margin-right: 20px;
+    padding: 20px;
+    flex: 3;
+    text-align: left;
+}
+
+.project-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex: 2;
+    margin: 10px;
+    margin-right: 50px;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.carousel img {
+    max-width: 100%;
+    height: auto;
+    display: none;
+    border-radius: 10px;
+}
+
+.carousel img.active {
+    display: block;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.55);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100;
+    height: auto;
+    width: auto;
+}
+
+.prev {
+    left: -40px; /* Déplace la flèche gauche à l'extérieur */
+}
+
+.next {
+    right: -40px; /* Déplace la flèche droite à l'extérieur */
+}
+
+
+#about .about-content {
+    width: 85%; /* Largeur du texte */
+    margin: 0 auto; /* Centre horizontalement */
+}
+
+#contacts{
+    padding-top: 10px;
+    padding-bottom: 70vh;
+}
+
+.contacts {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+/* Icône de l'enveloppe */
+.contacts-icon {
+    margin-right: 10px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+/* Lien d'email stylisé */
+.contacts a {
+    color: #007BFF; /* Couleur bleu pour l'email */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.contacts a:hover {
+    color: #0056b3; /* Changement de couleur au survol */
+    text-decoration: underline; /* Souligné au survol */
+}
+
+
+
+.modal {
+    display: none; /* Cacher la modale par défaut */
+    position: fixed; /* Reste au même endroit lors du défilement */
+    z-index: 1; /* S'assurer que la modale est au-dessus du contenu */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    z-index: 999;
+}
+
+/* Style général de la modale */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 100%;
+    max-width: 400px; /* Limite la largeur maximale */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère autour de la modale */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Conteneur du champ de mot de passe et du bouton */
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Style du champ de mot de passe */
+#password {
+    width: calc(100% - 25px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+#togglePasswordBtn {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Supprime le padding pour que le bouton prenne la taille exacte de l'image */
+    width: auto; /* Laisse la largeur s'ajuster automatiquement */
+    height: auto; /* Laisse la hauteur s'ajuster automatiquement */
+}
+
+/* Style des images dans le bouton */
+#togglePasswordBtn img {
+    width: 40px; /* Ajuste la taille de l'image */
+    height: 40px; /* Garder la taille proportionnelle */
+}
+
+/* Style au survol du bouton */
+#togglePasswordBtn:hover img {
+    opacity: 0.7; /* Diminue l'opacité au survol pour un effet visuel */
+}
+
+
+#password:focus {
+    border-color: #333F50; /* Bordure bleue au focus */
+}
+
+/* Conteneur des boutons Valider et Annuler */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Assurez-vous que le conteneur prend toute la largeur */
+    margin-top: 20px; /* Espace entre la saisie et les boutons */
+    padding: 10px;
+}
+
+/* Style des boutons */
+button {
+    position: relative;
+    width: 48%; /* Les boutons prennent 48% de la largeur */
+    padding: 10px;
+    background-color: #333F50;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box; /* Inclure padding et bordure dans la largeur totale */
+}
+
+/* Style au survol des boutons */
+button:hover {
+    background-color: #1f2630;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
