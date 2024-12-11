@@ -421,6 +421,7 @@ button:hover {
 
     .project-text {
         flex: 1;
+        margin-left: 35px;
     }
     
     .project-image {
