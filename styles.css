@@ -243,6 +243,8 @@ button {
     cursor: pointer;
     font-size: 24px;
     z-index: 100;
+    height: auto;
+    width: auto;
 }
 
 .prev {
@@ -287,4 +289,110 @@ button {
 .contacts a:hover {
     color: #0056b3; /* Changement de couleur au survol */
     text-decoration: underline; /* Souligné au survol */
+}
+
+
+
+.modal {
+    display: none; /* Cacher la modale par défaut */
+    position: fixed; /* Reste au même endroit lors du défilement */
+    z-index: 1; /* S'assurer que la modale est au-dessus du contenu */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+}
+
+/* Style général de la modale */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 100%;
+    max-width: 400px; /* Limite la largeur maximale */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère autour de la modale */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Conteneur du champ de mot de passe et du bouton */
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Style du champ de mot de passe */
+#password {
+    width: calc(100% - 25px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+#togglePasswordBtn {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Supprime le padding pour que le bouton prenne la taille exacte de l'image */
+    width: auto; /* Laisse la largeur s'ajuster automatiquement */
+    height: auto; /* Laisse la hauteur s'ajuster automatiquement */
+}
+
+/* Style des images dans le bouton */
+#togglePasswordBtn img {
+    width: 40px; /* Ajuste la taille de l'image */
+    height: 40px; /* Garder la taille proportionnelle */
+}
+
+/* Style au survol du bouton */
+#togglePasswordBtn:hover img {
+    opacity: 0.7; /* Diminue l'opacité au survol pour un effet visuel */
+}
+
+
+#password:focus {
+    border-color: #333F50; /* Bordure bleue au focus */
+}
+
+/* Conteneur des boutons Valider et Annuler */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Assurez-vous que le conteneur prend toute la largeur */
+    margin-top: 20px; /* Espace entre la saisie et les boutons */
+    padding: 10px;
+}
+
+/* Style des boutons */
+button {
+    position: relative;
+    width: 48%; /* Les boutons prennent 48% de la largeur */
+    padding: 10px;
+    background-color: #333F50;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box; /* Inclure padding et bordure dans la largeur totale */
+}
+
+/* Style au survol des boutons */
+button:hover {
+    background-color: #1f2630;
+}
+
+.no-scroll {
+    overflow: hidden;
 }
