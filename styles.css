@@ -217,12 +217,12 @@ header {
 }
 
 .timeline ol li:nth-child(5)::after{
-    width: 33px;
-    height: 12px;
+    width: 150px;
+    height: 7px;
     background: pink;
 }
 .timeline ol li:nth-child(5){
-    transform: translateX(584px);
+    transform: translateX(450px);
 }
 
 .timeline ol li:nth-child(6)::after{
@@ -246,7 +246,7 @@ header {
 .timeline ol li:nth-child(8)::after{
     width: 200px;
     height: 9px;
-    background: #888
+    background: #888;
 }
 .timeline ol li:nth-child(8){
     transform: translateX(735px);
@@ -285,7 +285,7 @@ header {
 /*TEXTE DE LA TIMELINE*/
 .timeline ol li div {
     text-align: left;
-    height: 150px;
+    height: 95px;
     position: absolute;
     left: calc(100% + 7px);
     width: 180px;
@@ -297,10 +297,21 @@ header {
     color: black;
     border-left: 2px solid #000;
 }
-  
+
+.timeline ol li:nth-child(2) div,
+.timeline ol li:nth-child(3) div,
+.timeline ol li:nth-child(9) div{
+    width: 250px;
+}
+
+.timeline ol li:nth-child(5) div,
+.timeline ol li:nth-child(10) div{
+    width: 200px;
+}
   
 /*PLACE LES ELEMENTS EN HAUT 1 SUR 2*/
   .timeline ol li:nth-child(odd) div {
+    height: 170px;
     padding-top: 0px;
     top: 0px;
     transform: translateY(-100%);
@@ -316,6 +327,8 @@ header {
     color: #333F50
 }
   
+
+
 .button {
     display: inline-block;
     padding: 10px 20px;
