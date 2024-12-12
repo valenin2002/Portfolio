@@ -139,11 +139,12 @@ header {
     grid-template-columns: 100% auto; /*Largeur du bloc de présentation*/
 }
 
-/* Add horizontal line below the list */
+/* LIGNE CENTRALE HORIZONTALE */
 .timeline::after {
     content: "";
     position: absolute;
-    top:46.2%;
+    top: calc(50% - 20px);
+    transform: translateY(50%);
     right: 50px;
     left: 50px;
     height: 2px; /* Adjust thickness */
@@ -288,7 +289,7 @@ header {
 /*PLACE LES ELEMENTS EN HAUT 1 SUR 2*/
   .timeline ol li:nth-child(odd) div {
     padding-top: 0px;
-    top: -5px;
+    top: 0px;
     transform: translateY(-100%);
 }
 
