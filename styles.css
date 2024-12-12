@@ -208,7 +208,7 @@ header {
     background: pink;
 }
 .timeline ol li:nth-child(4){
-    transform: translateX(700px);
+    transform: translateX(734px);
 }
 
 .timeline ol li:nth-child(5)::after{
@@ -217,7 +217,7 @@ header {
     background: white;
 }
 .timeline ol li:nth-child(5){
-    transform: translateX(730px);
+    transform: translateX(750px);
 }
 
 .timeline ol li:nth-child(6)::after{
@@ -226,7 +226,7 @@ header {
     background: pink;
 }
 .timeline ol li:nth-child(6){
-    transform: translateX(800px);
+    transform: translateX(810px);
 }
 
 .timeline ol li:nth-child(7)::after{
@@ -235,7 +235,7 @@ header {
     background: #888
 }
 .timeline ol li:nth-child(7){
-    transform: translateX(875px);
+    transform: translateX(885px);
 }
 
 .timeline ol li:nth-child(8)::after{
@@ -244,7 +244,7 @@ header {
     background: white;
 }
 .timeline ol li:nth-child(8){
-    transform: translateX(850px);
+    transform: translateX(860px);
 }
 
 .timeline ol li:nth-child(9)::after{
