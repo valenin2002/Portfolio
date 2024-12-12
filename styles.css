@@ -651,10 +651,6 @@ button:hover {
         margin-left: 0px;
     }
 
-    .timeline::after {
-        top: calc(50% - 20px);
-    }
-
     .project-card,
     .travaux-card{
         flex-direction: column;
