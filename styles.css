@@ -61,13 +61,15 @@ header {
     width: 60px;
     margin-top: 80px;
     height: fit-content;
-    background-color: rgba(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: sticky;
+    border-radius: 0 10px 10px 0;
     top: 0;
+    z-index: 999;
 }
 
 .sidebar ul {
@@ -644,20 +646,27 @@ button:hover {
 
 .scroll-to-top {
     position: fixed;
+    display: flex;
+    flex-direction: column;
     bottom: 20px;
     right: 20px;
-    background-color: #efefef; /*couleur du bouton*/
-    color: #888; /*couleur de la flèche*/
     border: none;
-    padding: 15px;
+    padding: 5px;
     border-radius: 10px;
-    font-size: 24px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s;
+    font-size: smaller;
+  }
+
+  .scroll-to-top img{
+    margin: auto;
+    width: 30px;
+    margin-bottom: 5px;
   }
   
   .scroll-to-top:hover {
+    margin: auto;
     color: #efefef;
     background-color: #888;
   }
