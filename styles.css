@@ -140,6 +140,7 @@ header {
 }
 
 /* LIGNE CENTRALE HORIZONTALE */
+/*
 .timeline::after {
     content: "";
     position: absolute;
@@ -147,9 +148,11 @@ header {
     transform: translateY(50%);
     right: 50px;
     left: 50px;
-    height: 2px; /* Adjust thickness */
-    background-color: #333F50; /* Color of the line */
+    height: 2px;
+    background-color: #333F50; 
 }
+    */
+
 
 /*ORGANIZED LIST*/
 .timeline ol {
@@ -185,88 +188,98 @@ header {
     z-index: 1;
 }
 
+/*LIGNE HORIZONTALE CENTRALE*/
+.timeline ol li:nth-child(1):after{
+    width: 2375px;
+    height: 2px;
+}
 .timeline ol li:nth-child(1){
-    transform: translateX(-30px);
-}
-
-.timeline ol li:nth-child(2)::after {
-    width: 800px;
-}
-.timeline ol li:nth-child(2){
     transform: translateX(-100px);
 }
 
-.timeline ol li:nth-child(3)::after{
-    width: 1200px;
+/*PLACEMENT DES POINTS*/
+.timeline ol li:nth-child(2){
+    transform: translateX(-180px);
+}
+
+.timeline ol li:nth-child(3)::after {
+    width: 800px;
 }
 .timeline ol li:nth-child(3){
-    transform: translateX(590px);
+    transform: translateX(-250px);
 }
 
 .timeline ol li:nth-child(4)::after{
+    width: 1200px;
+}
+.timeline ol li:nth-child(4){
+    transform: translateX(440px);
+}
+
+.timeline ol li:nth-child(5)::after{
     width: 33px;
     height: 12px;
     background: pink;
 }
-.timeline ol li:nth-child(4){
-    transform: translateX(734px);
+.timeline ol li:nth-child(5){
+    transform: translateX(584px);
 }
 
-.timeline ol li:nth-child(5)::after{
+.timeline ol li:nth-child(6)::after{
     width: 167px;
     height: 7px;
     background: white;
 }
-.timeline ol li:nth-child(5){
-    transform: translateX(750px);
+.timeline ol li:nth-child(6){
+    transform: translateX(600px);
 }
 
-.timeline ol li:nth-child(6)::after{
+.timeline ol li:nth-child(7)::after{
     height: 12px;
     width: 400px;
     background: pink;
 }
-.timeline ol li:nth-child(6){
-    transform: translateX(810px);
+.timeline ol li:nth-child(7){
+    transform: translateX(660px);
 }
 
-.timeline ol li:nth-child(7)::after{
+.timeline ol li:nth-child(8)::after{
     width: 200px;
     height: 9px;
     background: #888
 }
-.timeline ol li:nth-child(7){
-    transform: translateX(885px);
+.timeline ol li:nth-child(8){
+    transform: translateX(735px);
 }
 
-.timeline ol li:nth-child(8)::after{
+.timeline ol li:nth-child(9)::after{
     width: 100px;
     height: 5px;
     background: white;
 }
-.timeline ol li:nth-child(8){
-    transform: translateX(860px);
+.timeline ol li:nth-child(9){
+    transform: translateX(710px);
 }
 
-.timeline ol li:nth-child(9)::after{
+.timeline ol li:nth-child(10)::after{
     width: 200px;
     height: 7px;
     background: white;
 }
-.timeline ol li:nth-child(9){
-    transform: translateX(860px);
-}
-
 .timeline ol li:nth-child(10){
-    transform: translateX(1000px);
+    transform: translateX(710px);
 }
 
-.timeline ol li:nth-child(11)::after{
+.timeline ol li:nth-child(11){
+    transform: translateX(850px);
+}
+
+.timeline ol li:nth-child(12)::after{
     width: 100px;
     background: pink;
 }
-.timeline ol li:nth-child(11){
-    transform: translateX(910px);
+.timeline ol li:nth-child(12){
+    transform: translateX(760px);
 }
 
 /*TEXTE DE LA TIMELINE*/
