@@ -109,10 +109,141 @@ header {
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
+  
 
+/* TIMELINE */
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+.timeline {
+    position: relative;
+    white-space: nowrap;
+    width: 85%; /*largeur totale de la timeline*/
+    padding: 0 10px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 100% auto; /*Largeur du bloc de présentation*/
+    grid-gap: 10px;
+}
+  
+.timeline .info p {
+    margin-top: 10px;
+    color: white;
+}
+
+/*NE PAS AFFICHER LA SCROLLBAR*/
+.timeline ol::-webkit-scrollbar {
+    display: none;
+}
+
+/*ORGANIZED LIST*/
+.timeline ol {
+    font-size: 0;
+    padding: 250px 0; /* DECALEMENT VERTICAL DE LA TIMELINE*/
+    transition: all 1s;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+  
+/*GESTION DE LA DISPOSITION DES POINTS ET DE LA LIGNE*/
+.timeline ol li {
+    position: relative;
+    display: inline-block;
+    list-style-type: none;
+    width: 120px; /*ESPACEMENT ENTRE LES POINTS*/
+    height: 3px; /*LARGEUR DE LA LIGNE*/
+    background: #333F50; /*COULEUR DE LA LIGNE*/
+    scroll-snap-align: start;
+}
+  
+/*ALLONGE LA LIGNE JURSQU AU BOUT*/
+.timeline ol li:last-child {
+    width: 200px;
+}
+  
+  
+/*POINTS SUR LA TIMELINE*/
+.timeline ol li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 1px);
+    bottom: 0;
+    width: 16px;
+    height: 16px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: #333F50;
+    z-index: 1;
+}
+
+/*TEXTE DE LA TIMELINE*/
+.timeline ol li div {
+    position: absolute;
+    left: calc(100% + 7px);
+    width: 150px;
+    padding: 15px;
+    font-size: 1rem;
+    white-space: normal;
+    color: black;
+    background: #efefef;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 10px 10px 10px;
+}
+  
+/*PETITES FLECHES RELIANT LA TIMELINE AUX INFOS*/
+.timeline ol li div::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+  
+/*PLACE TOUTES LES INFOS CORRECTEMENT*/
+  .timeline ol li:nth-child(odd) div {
+    top: -16px;
+    transform: translateY(-100%);
+    border-radius: 10px 10px 10px 0;
+}
+  
+/*PETITES FLECHES RELIANT LA TIMELINE AUX INFOS (DU HAUT)*/
+.timeline ol li:nth-child(odd) div::before {
+    top: 100%;
+    border-width: 8px 8px 0 0;
+    border-color: #efefef transparent transparent transparent;
+}
+  
+.timeline ol li:nth-child(even) div {
+    top: calc(100% + 16px);
+}
+  
+/*PETITES FLECHES RELIANT LA TIMELINE AUX INFOS (DU BAS)*/
+.timeline ol li:nth-child(even) div::before {
+    top: -8px;
+    border-width: 8px 0 0 8px;
+    border-color: transparent transparent transparent #efefef;
+}
+  
+/* LES DATES */
+.timeline time {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: black;
+}
+  
 .button {
     display: inline-block;
     padding: 10px 20px;
+    margin-bottom: 10px;
     background-color: #333F50;
     color: #fff;
     text-decoration: none;
@@ -128,7 +259,6 @@ header {
     background: url('img/fond.png') no-repeat center center;
     background-size: cover;
     padding-top: 20px;
-    padding-bottom: 70vh;
 }
 
 #travaux{
@@ -136,16 +266,17 @@ header {
     background: url('img/fond.png') no-repeat center center;
     background-size: cover;
     padding-top: 10px;
-    padding-bottom: 70vh;
 }
 
-#projects {
+#projects,
+#asso {
     padding-top: 10px;
     position: relative; /* Nécessaire pour positionner la ligne */
 }
 
 /* POSITIONNEMENT DE LA LIGNE */
-#projects::before {
+#projects::before,
+#asso::before {
     content: '';
     position: absolute;
     top: 0;
@@ -159,7 +290,8 @@ header {
 }
 
 /* POSITIONNEMENT DES POINTS */
-.project-card::before {
+.project-card::before,
+.asso-card::before {
     content: '';
     position: absolute;
     left: 3%; /* Aligné avec la ligne verticale */
@@ -173,7 +305,8 @@ header {
 }
 
 .project-card,
-.travaux-card {
+.travaux-card,
+.asso-card {
     position: relative;
     display: flex;
     background-color: #efefef;
@@ -186,7 +319,8 @@ header {
 }
 
 .project-text,
-.travaux-text {
+.travaux-text,
+.asso-text {
     margin-left: 50px;
     margin-right: 20px;
     padding: 20px;
@@ -196,7 +330,8 @@ header {
 }
 
 .project-image,
-.travaux-image {
+.travaux-image,
+.asso-image {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -205,7 +340,8 @@ header {
     margin: 10px;
 }
 
-.project-image {
+.project-image,
+.asso-image {
     margin-right: 50px;
 }
 
@@ -277,6 +413,8 @@ button {
 }
 
 #contacts{
+    background: url('img/fond.png') no-repeat center center;
+    background-size: cover;
     padding-top: 10px;
     padding-bottom: 70vh;
 }
