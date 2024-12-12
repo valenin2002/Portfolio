@@ -51,6 +51,16 @@ header {
     color: #c6c6c6;
 }
 
+footer{
+    position: relative;
+    height: 40px;
+    padding-top: 20px;
+    margin: auto;
+    bottom: 0;
+    background-color: #333F50;
+    color: #fff;
+}
+
 /* Contenu principal */
 .main-content {
     display: flex;
@@ -508,11 +518,13 @@ button {
     background: url('img/fond.png') no-repeat center center;
     background-size: cover;
     padding-top: 10px;
-    padding-bottom: 70vh;
+}
+
+#haut-de-contact{
+    padding-bottom: 55vh;
 }
 
 .contacts {
-    margin: 20px 0;
     font-size: 18px;
 }
 
@@ -645,7 +657,7 @@ button:hover {
 
 
 .scroll-to-top {
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: column;
     bottom: 20px;
