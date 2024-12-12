@@ -652,7 +652,7 @@ button:hover {
     }
 
     .timeline::after{
-        transform: translateY(20px);
+        transform: translateY(15px);
     }
 
     .project-card,
@@ -677,4 +677,3 @@ button:hover {
         width: 90%;
     }
 }
-
