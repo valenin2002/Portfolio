@@ -45,6 +45,7 @@
                 <a href="#asso" class="button">Engagements associatifs</a>
                 <a href="#contacts" class="button">Contacts</a>
 
+                <h2>Parcours</h2>
                 <section class="timeline">
                     <ol>
                       <li>
@@ -54,7 +55,7 @@
                       </li>
                       <li>
                         <div>
-                          <time>Septembre 2019</time> Intégration de l'INSA Hauts-de-France - Classes préparatoires ingégrées
+                          <time>Septembre 2019</time> INSA Hauts-de-France - Classes préparatoires intégrées
                         </div>
                       </li>
                       <li>
@@ -300,7 +301,13 @@
         </div>
     </div>
 
+    <div class="scroll-to-top" onclick="scrollToTop()">
+        &#8679;  <!-- Une flèche vers le haut -->
+    </div>
+
+
 </body>
+
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -525,6 +532,20 @@
             }
         });
     });
+</script>
+
+<script>
+    var container = document.querySelector('.timeline ol');
+    container.scrollLeft = container.scrollWidth;  // Positionne la scrollbar à la fin
+</script>
+
+<script>
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
 </script>
 
 </html>
