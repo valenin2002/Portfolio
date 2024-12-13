@@ -11,6 +11,8 @@ body {
 
 /* Loader */
 #loader {
+    margin: 0;
+    padding: 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -749,10 +751,6 @@ button:hover {
   }
 
 @media (max-width: 600px) {
-
-    .loader{
-        display: none;
-    }
     .header-right {
         display: none;
     }
