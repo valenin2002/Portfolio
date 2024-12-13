@@ -791,6 +791,10 @@ button:hover {
         width: 60%;
     }
 
+    .asso-card::before{
+        margin: 150px;
+    }
+
     .modal-content {
         width: 90%;
     }
