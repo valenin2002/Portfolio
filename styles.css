@@ -329,7 +329,6 @@ footer{
     transform: translateY(-100%);
 }
 
-  
 /* LES DATES */
 .timeline time {
     display: block;
@@ -338,9 +337,8 @@ footer{
     margin-bottom: 10px;
     color: #333F50
 }
-  
 
-
+/*BOUTONS DE NAVIGUATION DANS HOME*/
 .button {
     display: inline-block;
     padding: 10px 20px;
