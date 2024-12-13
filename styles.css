@@ -758,6 +758,7 @@ button:hover {
         display: none;
     }
     .content {
+        width: 100vw;
         margin-left: 0px;
     }
     
@@ -785,5 +786,9 @@ button:hover {
 
     .modal-content {
         width: 90%;
+    }
+
+    .scroll-to-top{
+        display: none;
     }
 }
