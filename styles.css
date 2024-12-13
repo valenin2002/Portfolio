@@ -749,6 +749,10 @@ button:hover {
   }
 
 @media (max-width: 480px) {
+
+    .loader{
+        display: none;
+    }
     .header-right {
         display: none;
     }
