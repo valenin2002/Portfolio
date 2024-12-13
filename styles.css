@@ -792,3 +792,13 @@ button:hover {
         display: none;
     }
 }
+
+@media (min-width: 600px) and (max-width: 768px){
+    .scroll-to-top{
+        display: none;
+    }
+
+    .sidebar{
+        display: none;
+    }
+}
