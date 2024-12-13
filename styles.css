@@ -791,7 +791,7 @@ button:hover {
         width: 60%;
     }
 
-    .asso-card::before{
+    #asso::before{
         margin: 200px;
     }
 
