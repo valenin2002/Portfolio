@@ -368,6 +368,7 @@ footer{
     background: url('img/fond.png') no-repeat center center;
     background-size: cover;
     padding-top: 10px;
+    padding-bottom: 50px;
 }
 
 #projects,
@@ -426,20 +427,42 @@ footer{
     margin-left: 50px;
     margin-right: 20px;
     padding: 20px;
+    padding-bottom: 0px;
     flex: 3;
     text-align: left;
     margin-bottom: 20px;
 }
 
+.travaux-text h3,
+.asso-text h3{
+    margin-top: 0;
+    padding-top: 0;
+}
+.project-text p,
+.travaux-text p,
+.asso-text p{
+    margin-bottom: 0;
+}
+
 .project-image,
+.haut,
 .travaux-image,
 .asso-image {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    flex: 2;
     margin: 10px;
+}
+
+.project-image,
+.haut,
+.travaux-image{
+    flex: 2;
+
+}
+.asso-image{
+    flex:1;
 }
 
 .project-image,
@@ -449,6 +472,16 @@ footer{
 
 .travaux-image {
     margin-left: 50px;
+}
+
+.project-image{
+    flex-direction: column;
+}
+
+.bas{
+    font-size: 0.7rem;
+    color: #888;
+    margin: 0;
 }
 
 .carousel{
