@@ -478,6 +478,10 @@ footer{
     margin-bottom: 0;
 }
 
+.travaux a{
+    overflow-wrap: break-word;
+}
+
 .project-image,
 .haut,
 .travaux-image,
